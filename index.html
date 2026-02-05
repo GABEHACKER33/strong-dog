@@ -1,38 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Loader</title>
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      background: #000;
-    }
 
-    iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-  </style>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Loading…</title>
 </head>
 <body>
-
-<iframe id="frame" src="about:blank"></iframe>
-
 <script>
-  const iframe = document.getElementById("frame");
-  const doc = iframe.contentWindow.document;
+  const win = window.open("about:blank", "_blank");
 
-  doc.open();
-  doc.write(`
+  win.document.open();
+  win.document.write(`
     <!DOCTYPE html>
     <html>
     <head>
+      <title>about:blank</title>
       <style>
         html, body {
           margin: 0;
@@ -49,12 +30,13 @@
       </style>
     </head>
     <body>
-      <iframe src="https://strongdog.com/" allowfullscreen></iframe>
+      <iframe src="hohoho.html"></iframe>
     </body>
     </html>
   `);
-  doc.close();
-</script>
+  win.document.close();
 
+  window.location.replace("https://canvas.inspirededucationschools.com");
+</script>
 </body>
 </html>
